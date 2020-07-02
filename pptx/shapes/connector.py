@@ -288,11 +288,11 @@ class Connector(BaseShape):
             buffer_x = 0.1477732794
             connection_points = [
                 ((x + cx / 2), y),                                        # Top shape-midpoint
-                ((x + (buffer_x * cx) / 2), (y + cy / 2)),                # Left
-                ((x + ((1 - buffer_x) * cx / 2)), y + cy),                # Bottom parallelogram-midpoint
-                ((x + cx / 2), y + cy),                                   # Bottom shape-midpoint
+                ((x + ((1 - buffer_x) * cx / 2) + +buffer_x * cx), y),    # Top parallelogram-midpoint
                 (((x + cx) - buffer_x * cx / 2), (y + cy / 2)),           # Right
-                ((x + ((1 - buffer_x) * cx / 2) + + buffer_x * cx), y)    # Top parallelogram-midpoint
+                ((x + cx / 2), y + cy),                                   # Bottom shape-midpoint
+                ((x + ((1 - buffer_x) * cx / 2)), y + cy),                # Bottom parallelogram-midpoint
+                ((x + (buffer_x * cx) / 2), (y + cy / 2))                 # Left
                 ]
         elif 'oval' in name:
             buffer_x = 0.1398963731
