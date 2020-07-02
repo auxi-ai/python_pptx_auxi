@@ -287,31 +287,31 @@ class Connector(BaseShape):
         if 'parallelogram' in name:
             buffer_x = 0.1477732794
             connection_points = [
-                ((x + cx / 2), y),                                        # Top shape-midpoint
-                ((x + ((1 - buffer_x) * cx / 2) + +buffer_x * cx), y),    # Top parallelogram-midpoint
-                (((x + cx) - buffer_x * cx / 2), (y + cy / 2)),           # Right
-                ((x + cx / 2), y + cy),                                   # Bottom shape-midpoint
-                ((x + ((1 - buffer_x) * cx / 2)), y + cy),                # Bottom parallelogram-midpoint
-                ((x + (buffer_x * cx) / 2), (y + cy / 2))                 # Left
-                ]
+                ((x + cx / 2), y),  # Top shape-midpoint
+                ((x + ((1 - buffer_x) * cx / 2) + +buffer_x * cx), y),  # Top parallelogram-midpoint
+                (((x + cx) - buffer_x * cx / 2), (y + cy / 2)),  # Right
+                ((x + cx / 2), y + cy),  # Bottom shape-midpoint
+                ((x + ((1 - buffer_x) * cx / 2)), y + cy),  # Bottom parallelogram-midpoint
+                ((x + (buffer_x * cx) / 2), (y + cy / 2))  # Left
+            ]
         elif 'oval' in name:
             buffer_x = 0.1398963731
             buffer_y = 0.1509433962
             connection_points = [
-                ((x + cx / 2), y),                                        # Top
-                ((x + buffer_x * cx), (y + buffer_y * cy)),               # Top-left
-                (x, (y + cy / 2)),                                        # Left
-                ((x + buffer_x * cx), ((y + cy) - buffer_y * cy)),        # Bottom-left
-                ((x + cx / 2), y + cy),                                   # Bottom
-                (((x + cx) - buffer_x * cx), ((y + cy) - buffer_y * cy)), # Bottom-right
-                (x + cx, (y + cy / 2)),                                   # Right
-                (((x + cx) - buffer_x * cx), (y + buffer_y * cy))         # Top-right
-                ]
+                ((x + cx / 2), y),  # Top
+                ((x + buffer_x * cx), (y + buffer_y * cy)),  # Top-left
+                (x, (y + cy / 2)),  # Left
+                ((x + buffer_x * cx), ((y + cy) - buffer_y * cy)),  # Bottom-left
+                ((x + cx / 2), y + cy),  # Bottom
+                (((x + cx) - buffer_x * cx), ((y + cy) - buffer_y * cy)),  # Bottom-right
+                (x + cx, (y + cy / 2)),  # Right
+                (((x + cx) - buffer_x * cx), (y + buffer_y * cy))  # Top-right
+            ]
         else:
             connection_points = [
-                ((x + cx / 2), y),                                        # Top
-                (x, (y + cy / 2)),                                        # Left
-                ((x + cx / 2), y + cy),                                   # Bottom
-                (x + cx, (y + cy / 2))                                    # Right
-                ]
+                ((x + cx / 2), y),  # Top
+                (x, (y + cy / 2)),  # Left
+                ((x + cx / 2), y + cy),  # Bottom
+                (x + cx, (y + cy / 2))  # Right
+            ]
         return connection_points[cxn_pt_idx]
