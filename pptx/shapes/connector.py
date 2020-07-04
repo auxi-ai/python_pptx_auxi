@@ -286,6 +286,7 @@ class Connector(BaseShape):
         name, x, y, cx, cy = shape.name, shape.left, shape.top, shape.width, shape.height
         name = name.lower()
         if 'parallelogram' in name:
+            print('Paralellogram detected and we are in this scope now')
             buffer_x = 0.1477732794
             connection_points = [
                 ((x + cx / 2), y),  # Top shape-midpoint
@@ -295,6 +296,8 @@ class Connector(BaseShape):
                 ((x + ((1 - buffer_x) * cx / 2)), y + cy),  # Bottom parallelogram-midpoint
                 ((x + (buffer_x * cx) / 2), (y + cy / 2))  # Left
             ]
+            print('printing paralleloogram connection points')
+            print(connection_points)
         elif 'oval' in name:
             buffer_x = 0.1398963731
             buffer_y = 0.1509433962
